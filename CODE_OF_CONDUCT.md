@@ -11,4 +11,4 @@ The short version:
 
 ## Reporting
 
-Report conduct issues to the maintainer, [@Automaat](https://github.com/Automaat), privately through [GitHub's private reporting form](https://github.com/Automaat/opencode-plugin-comment-judge/security/advisories/new) with "Code of conduct" in the title, or through GitHub's [report content](https://docs.github.com/en/communities/maintaining-your-safety-on-github/reporting-abuse-or-spam) feature. Reports are handled privately.
+Report conduct issues to the maintainer, [@Automaat](https://github.com/Automaat), privately through [GitHub's private reporting form](https://github.com/smykla-skalski/opencode-plugin-comment-judge/security/advisories/new) with "Code of conduct" in the title, or through GitHub's [report content](https://docs.github.com/en/communities/maintaining-your-safety-on-github/reporting-abuse-or-spam) feature. Reports are handled privately.

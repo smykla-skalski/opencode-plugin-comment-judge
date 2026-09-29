@@ -46,12 +46,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Automaat/opencode-plugin-comment-judge.git"
+    "url": "git+https://github.com/smykla-skalski/opencode-plugin-comment-judge.git"
   },
   "bugs": {
-    "url": "https://github.com/Automaat/opencode-plugin-comment-judge/issues"
+    "url": "https://github.com/smykla-skalski/opencode-plugin-comment-judge/issues"
   },
-  "homepage": "https://github.com/Automaat/opencode-plugin-comment-judge#readme",
+  "homepage": "https://github.com/smykla-skalski/opencode-plugin-comment-judge#readme",
   "devDependencies": {
     "@opencode-ai/plugin": "^1.18.31",
     "@types/node": "^24.13.4",
