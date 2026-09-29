@@ -1,6 +1,6 @@
-# opencode-plugin-comment-judge
+# @smykla-skalski/opencode-plugin-comment-judge
 
-[![npm version](https://img.shields.io/npm/v/opencode-plugin-comment-judge)](https://www.npmjs.com/package/opencode-plugin-comment-judge) [![npm provenance](https://img.shields.io/badge/provenance-SLSA_v1-blue?logo=npm)](https://www.npmjs.com/package/opencode-plugin-comment-judge) [![license](https://img.shields.io/npm/l/opencode-plugin-comment-judge)](LICENSE)
+[![npm version](https://img.shields.io/npm/v/@smykla-skalski/opencode-plugin-comment-judge)](https://www.npmjs.com/package/@smykla-skalski/opencode-plugin-comment-judge) [![npm provenance](https://img.shields.io/badge/provenance-SLSA_v1-blue?logo=npm)](https://www.npmjs.com/package/@smykla-skalski/opencode-plugin-comment-judge) [![license](https://img.shields.io/npm/l/@smykla-skalski/opencode-plugin-comment-judge)](LICENSE)
 
 An [opencode](https://opencode.ai) plugin, and a [Claude Code](#claude-code) hook, that puts a model between your agent and the comments it writes. Every comment an edit adds is judged: the ones that restate the code or tell the story of the change are removed or rewritten before the file is touched, and the ones that explain something the code cannot say stay.
 
@@ -45,7 +45,7 @@ Add the plugin to `opencode.json`, pinned to a version. opencode installs npm pl
 ```json
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugin": ["opencode-plugin-comment-judge@0.3.0"],
+  "plugin": ["@smykla-skalski/opencode-plugin-comment-judge@0.3.0"],
   "small_model": "anthropic/claude-haiku-4-5"
 }
 ```
@@ -58,7 +58,7 @@ Add the plugin to `opencode.json`, pinned to a version. opencode installs npm pl
 
 ```json
 {
-  "plugin": [["opencode-plugin-comment-judge@0.3.0", { "model": "anthropic/claude-haiku-4-5", "timeoutMs": 20000 }]]
+  "plugin": [["@smykla-skalski/opencode-plugin-comment-judge@0.3.0", { "model": "anthropic/claude-haiku-4-5", "timeoutMs": 20000 }]]
 }
 ```
 
@@ -78,17 +78,19 @@ To read a `log` file as numbers, run `mise run stats -- path/to/log.jsonl` (add 
 
 opencode installs an npm plugin once and keeps using that copy. It installs each entry into its own directory named after the entry, under `~/.cache/opencode/packages/` on macOS and Linux (`$XDG_CACHE_HOME/opencode/packages/` when `XDG_CACHE_HOME` is set), and skips the install whenever that directory already has the package. Nothing refreshes it later.
 
-A bare `"opencode-plugin-comment-judge"` entry resolves `latest` on first install and stays on that version from then on. To update it, remove its cache directory, `opencode-plugin-comment-judge@latest`, and `opencode-plugin-comment-judge` if it exists too, then restart opencode:
+A bare `"@smykla-skalski/opencode-plugin-comment-judge"` entry resolves `latest` on first install and stays on that version from then on. To update it, remove its cache directory, `@smykla-skalski/opencode-plugin-comment-judge@latest`, and `@smykla-skalski/opencode-plugin-comment-judge` if it exists too, then restart opencode:
 
 ```sh
-rm -rf "${XDG_CACHE_HOME:-$HOME/.cache}/opencode/packages/opencode-plugin-comment-judge@latest" "${XDG_CACHE_HOME:-$HOME/.cache}/opencode/packages/opencode-plugin-comment-judge"
+rm -rf "${XDG_CACHE_HOME:-$HOME/.cache}/opencode/packages/@smykla-skalski/opencode-plugin-comment-judge@latest" "${XDG_CACHE_HOME:-$HOME/.cache}/opencode/packages/@smykla-skalski/opencode-plugin-comment-judge"
 ```
 
 <!-- x-release-please-start-version -->
 
-A pinned entry such as `"opencode-plugin-comment-judge@0.3.0"` gets a directory of its own, so changing the version installs the new one on the next start, and changing it back rolls back. Pinning is the recommended setup: every machine runs the same version, and an update is a one-line change you choose to make.
+A pinned entry such as `"@smykla-skalski/opencode-plugin-comment-judge@0.3.0"` gets a directory of its own, so changing the version installs the new one on the next start, and changing it back rolls back. Pinning is the recommended setup: every machine runs the same version, and an update is a one-line change you choose to make.
 
 <!-- x-release-please-end -->
+
+The previous unscoped package, `opencode-plugin-comment-judge`, remains available at `0.3.0`. Replace its name in your config with `@smykla-skalski/opencode-plugin-comment-judge` to receive future releases.
 
 What changed in each version is in the [GitHub releases](https://github.com/smykla-skalski/opencode-plugin-comment-judge/releases) and in [CHANGELOG.md](CHANGELOG.md).
 
@@ -162,7 +164,7 @@ The same package ships `comment-judge-claude`, a command for Claude Code's `PreT
 Install it once so each edit does not pay for `npx` resolving the package:
 
 ```sh
-npm install -g opencode-plugin-comment-judge
+npm install -g @smykla-skalski/opencode-plugin-comment-judge
 ```
 
 Then add the hooks to `.claude/settings.json` in a project, or to `~/.claude/settings.json` for every project:
@@ -180,7 +182,7 @@ Then add the hooks to `.claude/settings.json` in a project, or to `~/.claude/set
 }
 ```
 
-Without a global install, use `"command": "npx -y -p opencode-plugin-comment-judge comment-judge-claude"` in both places.
+Without a global install, use `"command": "npx -y -p @smykla-skalski/opencode-plugin-comment-judge comment-judge-claude"` in both places.
 
 | Variable | Default | Meaning |
 | --- | --- | --- |
