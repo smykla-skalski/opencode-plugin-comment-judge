@@ -1,6 +1,6 @@
 # Publishing to npm
 
-The release workflow follows the
+The shared workflow and mise tasks follow the
 [organization catalog](https://github.com/smykla-skalski/.github/tree/main/sync).
 It runs when a GitHub Release is published, skips prereleases, checks the tag
 against `package.json` and `main`, runs `mise run check`, and publishes the
