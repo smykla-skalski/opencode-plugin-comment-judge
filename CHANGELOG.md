@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.4.0](https://github.com/smykla-skalski/opencode-plugin-comment-judge/compare/v0.3.0...v0.4.0) (2026-09-29)
+
+* Publish the plugin as `@smykla-skalski/opencode-plugin-comment-judge`. The previous unscoped package remains at `0.3.0`.
+
 ## [0.3.0](https://github.com/Automaat/opencode-plugin-comment-judge/compare/v0.2.0...v0.3.0) (2026-09-17)
 
 
