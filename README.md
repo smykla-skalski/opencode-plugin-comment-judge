@@ -43,7 +43,7 @@ Add the plugin to `opencode.json`, pinned to a version. opencode installs npm pl
 ```json
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugin": ["@smykla-skalski/opencode-plugin-comment-judge@0.4.0"],
+  "plugin": ["@smykla-skalski/opencode-plugin-comment-judge@0.4.1"],
   "small_model": "anthropic/claude-haiku-4-5"
 }
 ```
@@ -52,7 +52,7 @@ Add the plugin to `opencode.json`, pinned to a version. opencode installs npm pl
 
 ```json
 {
-  "plugin": [["@smykla-skalski/opencode-plugin-comment-judge@0.4.0", { "model": "anthropic/claude-haiku-4-5", "timeoutMs": 20000 }]]
+  "plugin": [["@smykla-skalski/opencode-plugin-comment-judge@0.4.1", { "model": "anthropic/claude-haiku-4-5", "timeoutMs": 20000 }]]
 }
 ```
 
@@ -76,7 +76,7 @@ A bare `"@smykla-skalski/opencode-plugin-comment-judge"` entry resolves `latest`
 rm -rf "${XDG_CACHE_HOME:-$HOME/.cache}/opencode/packages/@smykla-skalski/opencode-plugin-comment-judge@latest" "${XDG_CACHE_HOME:-$HOME/.cache}/opencode/packages/@smykla-skalski/opencode-plugin-comment-judge"
 ```
 
-A pinned entry such as `"@smykla-skalski/opencode-plugin-comment-judge@0.4.0"` gets a directory of its own, so changing the version installs the new one on the next start, and changing it back rolls back. Pinning is the recommended setup: every machine runs the same version, and an update is a one-line change you choose to make.
+A pinned entry such as `"@smykla-skalski/opencode-plugin-comment-judge@0.4.1"` gets a directory of its own, so changing the version installs the new one on the next start, and changing it back rolls back. Pinning is the recommended setup: every machine runs the same version, and an update is a one-line change you choose to make.
 
 The previous unscoped package, `opencode-plugin-comment-judge`, remains available at `0.3.0`. Replace its name in your config with `@smykla-skalski/opencode-plugin-comment-judge` to receive future releases.
 
