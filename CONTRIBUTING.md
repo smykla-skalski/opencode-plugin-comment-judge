@@ -73,7 +73,7 @@ release-please uses the default token unless a `RELEASE_PLEASE_TOKEN` secret exi
 npm cannot configure a trusted publisher for a package name that has never been published ([npm/cli#8544](https://github.com/npm/cli/issues/8544)), so the first version is published by hand and CI publishes every version after it. These are the steps this package went through; in a fork, substitute your package name and repository.
 
 1. Create an environment named `npm` in the repository settings, and under deployment branches allow only `main`.
-2. Merge the first release pull request with `NPM_PUBLISH_ENABLED` unset. The workflow creates the tag and the GitHub release, and the publish job stops at the dry run.
+2. Set `NPM_PUBLISH_ENABLED` to `false` before merging the first release pull request. The workflow creates the tag and the GitHub release, and the publish job stops at the dry run.
 3. Publish that version from the maintainer's npm account. Check out the tag and run `mise run install`, then log in and publish with a separate npm config so the credentials stay out of your default `~/.npmrc`:
 
    ```sh
@@ -85,7 +85,10 @@ npm cannot configure a trusted publisher for a package name that has never been 
 4. Add the trusted publisher. With npm 11.15 or later, and 2FA again:
 
    ```sh
-   NPM_CONFIG_USERCONFIG=~/.npmrc-personal mise exec -- npm trust github opencode-plugin-comment-judge --file release.yml --repo smykla-skalski/opencode-plugin-comment-judge --env npm --allow-publish
+   NPM_CONFIG_USERCONFIG=~/.npmrc-personal mise exec -- npm trust github \
+     @smykla-skalski/opencode-plugin-comment-judge \
+     --file release.yml --repo smykla-skalski/opencode-plugin-comment-judge \
+     --env npm --allow-publish
    ```
 
    Or on npmjs.com, in the package settings: GitHub Actions, the repository, workflow `release.yml`, environment `npm`. npm grants it publish and stage publish.
