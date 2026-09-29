@@ -1,6 +1,6 @@
 [tools]
 node = "24.21.0"
-oxlint = "1.79.0"
+oxlint = "1.84.0"
 markdownlint-cli2 = "0.23.3"
 actionlint = "1.7.12"
 zizmor = "1.30.1"
@@ -22,7 +22,7 @@ description = "Lint with oxlint, warnings denied"
 run = "oxlint --deny-warnings --report-unused-disable-directives"
 
 [tasks."lint:md"]
-description = "Lint markdown for fences that never close"
+description = "Lint markdown"
 run = "markdownlint-cli2"
 
 [tasks."lint:actions"]
