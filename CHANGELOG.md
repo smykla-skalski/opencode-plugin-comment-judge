@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/smykla-skalski/opencode-plugin-comment-judge/compare/v0.3.0...v0.4.0) (2026-09-29)
+
+
+### Features
+
+* **plugin:** move npm package to org scope ([#32](https://github.com/smykla-skalski/opencode-plugin-comment-judge/issues/32)) ([3446238](https://github.com/smykla-skalski/opencode-plugin-comment-judge/commit/34462387a28ec0adaaaf32082061f9327af73cc9))
+
 ## [0.3.0](https://github.com/Automaat/opencode-plugin-comment-judge/compare/v0.2.0...v0.3.0) (2026-09-17)
 
 
