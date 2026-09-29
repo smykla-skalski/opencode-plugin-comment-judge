@@ -2,7 +2,7 @@
 
 ## Reporting a vulnerability
 
-Report it privately through [GitHub's private vulnerability reporting](https://github.com/Automaat/opencode-plugin-comment-judge/security/advisories/new). Do not open a public issue or pull request. Include the plugin version, the opencode version, the judge model, and the steps to reproduce.
+Report it privately through [GitHub's private vulnerability reporting](https://github.com/smykla-skalski/opencode-plugin-comment-judge/security/advisories/new). Do not open a public issue or pull request. Include the plugin version, the opencode version, the judge model, and the steps to reproduce.
 
 ## Supported versions
 
@@ -27,4 +27,4 @@ The Claude Code hook, `comment-judge-claude`, sends the same text through `claud
 - An edit whose `updatedInput` changes anything but comment text, or that skips a permission prompt Claude Code would otherwise show.
 - Notes or rejection records written anywhere but the private `comment-judge-claude-<uid>` directory under the system temp directory, or readable by another user.
 
-A verdict you disagree with is not a vulnerability; use the [wrong verdict](https://github.com/Automaat/opencode-plugin-comment-judge/issues/new?template=wrong-verdict.yml) issue template.
+A verdict you disagree with is not a vulnerability; use the [wrong verdict](https://github.com/smykla-skalski/opencode-plugin-comment-judge/issues/new?template=wrong-verdict.yml) issue template.

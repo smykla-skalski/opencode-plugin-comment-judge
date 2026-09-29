@@ -90,7 +90,7 @@ A pinned entry such as `"opencode-plugin-comment-judge@0.3.0"` gets a directory 
 
 <!-- x-release-please-end -->
 
-What changed in each version is in the [GitHub releases](https://github.com/Automaat/opencode-plugin-comment-judge/releases) and in [CHANGELOG.md](CHANGELOG.md).
+What changed in each version is in the [GitHub releases](https://github.com/smykla-skalski/opencode-plugin-comment-judge/releases) and in [CHANGELOG.md](CHANGELOG.md).
 
 ## Judging a whole branch
 
@@ -210,7 +210,7 @@ Limitations on top of the ones above:
 
 ## Reporting a wrong verdict
 
-Open an issue with the [wrong verdict](https://github.com/Automaat/opencode-plugin-comment-judge/issues/new?template=wrong-verdict.yml) template: the comment, the code around it, what the judge did and what it should have done. These reports become cases in [`eval/cases/`](eval/cases), which `mise run eval` replays against real models before the instructions change; see [CONTRIBUTING.md](CONTRIBUTING.md#replaying-the-eval-cases).
+Open an issue with the [wrong verdict](https://github.com/smykla-skalski/opencode-plugin-comment-judge/issues/new?template=wrong-verdict.yml) template: the comment, the code around it, what the judge did and what it should have done. These reports become cases in [`eval/cases/`](eval/cases), which `mise run eval` replays against real models before the instructions change; see [CONTRIBUTING.md](CONTRIBUTING.md#replaying-the-eval-cases).
 
 ## Trying a working copy
 

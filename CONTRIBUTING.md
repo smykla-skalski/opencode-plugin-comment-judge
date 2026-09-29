@@ -64,7 +64,7 @@ Small and single-purpose. `main` takes squash merges, and the pull request title
 
 ## Releasing
 
-[release-please](https://github.com/googleapis/release-please) runs on every push to `main` and keeps a release pull request open against it. The first version is `0.1.0`, set by `initial-version` in [`release-please-config.json`](release-please-config.json). Merging the release pull request tags `vX.Y.Z` and creates the GitHub release, and the same workflow runs `mise run check` on the release commit and publishes to npm with provenance through [trusted publishing](https://docs.npmjs.com/trusted-publishers). The provenance attestation names `Automaat/opencode-plugin-comment-judge`, `.github/workflows/release.yml` and `refs/heads/main`. Until the repository variable `NPM_PUBLISH_ENABLED` is `true`, the publish job only runs `npm publish --dry-run`.
+[release-please](https://github.com/googleapis/release-please) runs on every push to `main` and keeps a release pull request open against it. The first version is `0.1.0`, set by `initial-version` in [`release-please-config.json`](release-please-config.json). Merging the release pull request tags `vX.Y.Z` and creates the GitHub release, and the same workflow runs `mise run check` on the release commit and publishes to npm with provenance through [trusted publishing](https://docs.npmjs.com/trusted-publishers). The provenance attestation names `smykla-skalski/opencode-plugin-comment-judge`, `.github/workflows/release.yml` and `refs/heads/main`. Until the repository variable `NPM_PUBLISH_ENABLED` is `true`, the publish job only runs `npm publish --dry-run`.
 
 release-please uses the default token unless a `RELEASE_PLEASE_TOKEN` secret exists. With the default token GitHub does not start CI on the release pull request, so it shows no checks; the publish job still runs the gate before publishing. To get CI on release pull requests, add `RELEASE_PLEASE_TOKEN` as a fine-grained token with contents and pull requests write access. This repository does not have one yet.
 
@@ -85,7 +85,7 @@ npm cannot configure a trusted publisher for a package name that has never been 
 4. Add the trusted publisher. With npm 11.15 or later, and 2FA again:
 
    ```sh
-   NPM_CONFIG_USERCONFIG=~/.npmrc-personal mise exec -- npm trust github opencode-plugin-comment-judge --file release.yml --repo Automaat/opencode-plugin-comment-judge --env npm --allow-publish
+   NPM_CONFIG_USERCONFIG=~/.npmrc-personal mise exec -- npm trust github opencode-plugin-comment-judge --file release.yml --repo smykla-skalski/opencode-plugin-comment-judge --env npm --allow-publish
    ```
 
    Or on npmjs.com, in the package settings: GitHub Actions, the repository, workflow `release.yml`, environment `npm`. npm grants it publish and stage publish.
