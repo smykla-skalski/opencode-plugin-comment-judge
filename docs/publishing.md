@@ -18,7 +18,7 @@ The npm trusted publisher for
 | Environment | `npm` |
 | Allowed action | Direct `npm publish` |
 
-The old `release.yml` publisher must be replaced before the workflow change is
-merged. `NPM_PUBLISH_ENABLED` is already `true`; set it to `false` during the
-trust migration, then restore `true` after the new publisher is active.
+Publishing is disabled with `NPM_PUBLISH_ENABLED=false` while the npm trusted
+publisher still names the old `release.yml` workflow. Replace that publisher
+with the connection above, then restore `NPM_PUBLISH_ENABLED=true`.
 See [npm trusted publishing](https://docs.npmjs.com/trusted-publishers/).
