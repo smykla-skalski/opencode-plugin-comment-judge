@@ -18,7 +18,7 @@ The npm trusted publisher for
 | Environment | `npm` |
 | Allowed action | Direct `npm publish` |
 
-Publishing is disabled with `NPM_PUBLISH_ENABLED=false` while the npm trusted
-publisher still names the old `release.yml` workflow. Replace that publisher
-with the connection above, then restore `NPM_PUBLISH_ENABLED=true`.
+Set the repository variable `NPM_PUBLISH_ENABLED=true` for direct publishing.
+Other values run `npm publish --dry-run`. Keep the trusted publisher aligned
+with the fields above.
 See [npm trusted publishing](https://docs.npmjs.com/trusted-publishers/).
