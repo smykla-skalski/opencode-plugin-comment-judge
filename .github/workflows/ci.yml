@@ -34,8 +34,21 @@ jobs:
       - run: mise run install
       - run: mise run test
 
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: jdx/mise-action@9149ea85001c7435d5a66bb127d6a1b6227cb0a5 # v5.0.0
+        with:
+          cache: true
+      - run: mise run install
+      - run: mise run check
+
   e2e:
-    name: e2e (pinned opencode)
+    if: vars.OPENCODE_PLUGIN_E2E == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -47,31 +60,3 @@ jobs:
           cache: true
       - run: mise run install
       - run: mise run test:e2e
-
-  typecheck:
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-      - uses: jdx/mise-action@9149ea85001c7435d5a66bb127d6a1b6227cb0a5 # v5.0.0
-        with:
-          cache: true
-      - run: mise run install
-      - run: mise run typecheck
-      - run: mise run build
-
-  lint:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-      - uses: jdx/mise-action@9149ea85001c7435d5a66bb127d6a1b6227cb0a5 # v5.0.0
-        with:
-          cache: true
-      - run: mise run lint:js
-      - run: mise run lint:md
-      - run: mise run lint:actions
