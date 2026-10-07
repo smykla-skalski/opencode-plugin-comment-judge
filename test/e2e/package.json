@@ -5,6 +5,6 @@
   "license": "MIT",
   "type": "module",
   "devDependencies": {
-    "opencode-ai": "1.18.31"
+    "opencode-ai": "1.18.35"
   }
 }
