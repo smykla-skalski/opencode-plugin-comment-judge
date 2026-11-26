@@ -54,7 +54,7 @@
   "homepage": "https://github.com/smykla-skalski/opencode-plugin-comment-judge#readme",
   "devDependencies": {
     "@opencode-ai/plugin": "^1.18.31",
-    "@types/node": "^24.13.4",
+    "@types/node": "^26.0.0",
     "typescript": "^7.0.2"
   },
   "scripts": {
